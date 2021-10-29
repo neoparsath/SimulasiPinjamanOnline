@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bg_smol"
+        tools:ignore="ContentDescription,ImageContrastCheck" />
+
+    <TextView
+        android:id="@+id/header_text"
+        android:layout_width="318dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/simulasi_pinjaman_online"
+        android:textColor="#FFFF00"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@+id/header"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/icon_pokok_pinjaman"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="@id/pokok_pinjaman_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/pokok_pinjaman_layout"
+        app:srcCompat="@drawable/ic_pokok_pinjaman" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/pokok_pinjaman_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="303dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        app:boxStrokeWidth="2dp"
+        app:layout_constraintStart_toEndOf="@id/icon_pokok_pinjaman"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        app:prefixText="Rp.">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pokok_pinjaman_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/pokok_pinjaman"
+            android:inputType="numberDecimal"
+            android:textColorHint="#757575"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/icon_jangka_waktu"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="@id/jangka_waktu_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/jangka_waktu_layout"
+        app:srcCompat="@drawable/ic_jangka_waktu" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/jangka_waktu_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="303dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        app:boxStrokeWidth="2dp"
+        app:layout_constraintStart_toEndOf="@id/icon_jangka_waktu"
+        app:layout_constraintTop_toBottomOf="@+id/pokok_pinjaman_layout"
+        app:suffixText="bulan">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/jangka_waktu_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/jangka_waktu"
+            android:textColorHint="#757575"
+            android:inputType="numberDecimal"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/separator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/suku_bunga"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jangka_waktu_layout"
+        app:srcCompat="@drawable/line_separator"
+        tools:ignore="ContentDescription"/>
+
+    <ImageView
+        android:id="@+id/icon_suku_bunga"
+        android:layout_width="30dp"
+        android:layout_height="27dp"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="@id/suku_bunga"
+        app:layout_constraintEnd_toEndOf="@+id/icon_jangka_waktu"
+        app:layout_constraintStart_toStartOf="@+id/icon_jangka_waktu"
+        app:layout_constraintTop_toTopOf="@id/suku_bunga"
+        app:srcCompat="@drawable/ic_bunga" />
+
+    <TextView
+        android:id="@+id/suku_bunga"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/bunga_text"
+        app:layout_constraintStart_toStartOf="@+id/jangka_waktu_layout"
+        app:layout_constraintTop_toBottomOf="@+id/separator" />
+
+    <ImageView
+        android:id="@+id/icon_biaya_admin"
+        android:layout_width="30dp"
+        android:layout_height="25dp"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="@id/biaya_admin"
+        app:layout_constraintEnd_toEndOf="@+id/icon_suku_bunga"
+        app:layout_constraintStart_toStartOf="@+id/icon_suku_bunga"
+        app:layout_constraintTop_toTopOf="@id/biaya_admin"
+        app:srcCompat="@drawable/ic_layanan" />
+
+    <TextView
+        android:id="@+id/biaya_admin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/biaya_administrasi"
+        app:layout_constraintStart_toStartOf="@+id/suku_bunga"
+        app:layout_constraintTop_toBottomOf="@+id/suku_bunga" />
+
+    <Button
+        android:id="@+id/hitung"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/hitung"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/biaya_admin" />
+
+    <LinearLayout
+        android:id="@+id/hasil_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/customborder"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hitung">
+
+        <TextView
+            android:id="@+id/hasil_data_peminjam_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:textColor="#1976D2"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:typeface="normal" />
+
+        <TextView
+            android:id="@+id/hasil_data_peminjam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/hasil_perhitungan_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:textColor="#1976D2"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:typeface="normal" />
+
+        <TextView
+            android:id="@+id/hasil_perhitungan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

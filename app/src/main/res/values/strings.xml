@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Simulasi Pinjaman Online</string>
+    <string name="simulasi_pinjaman_online">Simulasi Pinjaman Online</string>
+    <string name="pokok_pinjaman">Pokok Pinjaman</string>
+    <string name="jangka_waktu">Jangka Waktu</string>
+    <string name="bunga_text">Bunga = 3.75% per bulan</string>
+    <string name="biaya_administrasi">Biaya Layanan = 5% dari Pokok Pinjaman</string>
+    <string name="hitung">Hitung</string>
+</resources>
